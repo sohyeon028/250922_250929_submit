@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="btns">
+        <div class="container">
+            <div class="btns__bgcolor"></div>
+            <div class="btns__menu">
+                <button class="btn home">Home</button>
+                <button class="btn about">About</button>
+                <button class="btn skills">Skills</button>
+                <button class="btn works">Works</button>
+                <button class="btn contact">Contact</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="home">
+        <div class="wrapper">
+            <h1>Home</h1>
+            <h2>고민 없이 바로 이해되는 디자인</h2>
+            <h3>가장 중요한 정보에 집중하여 핵심을 전달합니다.
+            </h3>
+
+        </div>
+    </section>
+    <section id="about">
+        <div class="wrapper">
+            <h1>About</h1>
+            <h2>다정한 소통, 디자인으로 말하다.</h2>
+            <h3>디자인은 사람을 향한 '소통'이라 믿습니다. 따뜻한 감성으로 사용자의 이야기에 귀 기울여 미소 지을 수 있는 결과물을 만드는 디자이너 박소현 입니다.
+            </h3>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="wrapper">
+            <h1>Skills</h1>
+            <h2>따뜻한 경험을 만드는 도구들</h2>
+            <h3>Adobe Photoshop, Adobe Illustrator, Adobe Premiere Pro, Adobe After Effects, Figma, Procreate
+            </h3>
+        </div>
+    </section>
+    <section id="works" class="section">
+        <div class="section__container">
+            <h1>My Works</h1>
+            <h3>Projects</h3>
+            <div class="work__categories ">
+                <button class="category__btn selected" data-filter="*">All<span class="category__count">6</span></button>
+                <button class="category__btn" data-filter="visual">Visual Design<span class="category__count">3</span></button>
+                <button class="category__btn" data-filter="web">Web Design<span class="category__count">3</span></button>
+                <!--<button class="category__btn" data-filter="mobile">Mobile Design<span class="category__count">2</span></button>-->
+            </div>
+            <div class="work__projects">
+                <a href="#" class="project" target="_blank" data-type="visual">
+                    <img src="imgs/누2.png" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Logo Design</h3>
+                        <span>Egg Tart Logo Design - 에그랑너</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="visual">
+                    <img src="imgs/제로소다.jpg" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Poster Design</h3>
+                        <span>beverage poster design</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="visual">
+                    <img src="imgs/이미지 목업 과제 제출_2401110077 박소현.png" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Book Cover Design</h3>
+                        <span>'I hope you are happy' Book Cover reDesign</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="web">
+                    <img src="imgs/수원화성 메인 페이지.jpg" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Web main page Design</h3>
+                        <span>수원관광 '수원화성' Web main page Design</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="web">
+                    <img src="imgs/카카오프렌즈 웹사이트 리디자인.png" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Website Redesign</h3>
+                        <span>Kakaofriends Website Redesign</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="web">
+                    <img src="imgs/몬스터 에너지.jpg" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Website Redesign</h3>
+                        <span>Monster Energy Website Redesign</span>
+                    </div>
+                </a>
+                <!--<a href="#" class="project" target="_blank" data-type="mobile">
+                    <img src="imgs/stu07.png" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Stu07 Portfolio</h3>
+                        <span>Promotion Design</span>
+                    </div>
+                </a>
+                <a href="#" class="project" target="_blank" data-type="mobile">
+                    <img src="imgs/stu08.png" alt="" class="project__img">
+                    <div class="project__description">
+                        <h3>Stu08 Portfolio</h3>
+                        <span>Promotion Design</span>
+                    </div>
+                </a>-->
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="wrapper">
+            <h1>Contact</h1>
+            <h2>lisianthso@naver.com</h2>
+            <h3>Please contact me anytime.
+            </h3>
+        </div>
+    </section>
+
+    <button class="arrow-up">
+        <span class="material-symbols-outlined">
+            arrow_upward
+        </span>     
+    </button>
+
+
+    <script>
+        const btnHome = document.querySelector('.home');
+        const sectionHome = document.querySelector('#home');
+        btnHome.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+
+        const btnabout = document.querySelector('.about');
+        const sectionabout = document.querySelector('#about');
+        btnabout.addEventListener('click', function() {
+            sectionabout.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+        const btnskills = document.querySelector('.skills');
+        const sectionskills = document.querySelector('#skills');
+        btnskills.addEventListener('click', function() {
+            sectionskills.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+        const btnworks = document.querySelector('.works');
+        const sectionworks = document.querySelector('#works');
+        btnworks.addEventListener('click', function() {
+            sectionworks.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+        const btncontact = document.querySelector('.contact');
+        const sectioncontact = document.querySelector('#contact');
+        btncontact.addEventListener('click', function() {
+            sectioncontact.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+
+        const arrowUp = document.querySelector('.arrow-up');
+        document.addEventListener('scroll', function() {
+            console.log(window.scrollY);
+            if (window.scrollY > 300) {
+                arrowUp.classList.add('show');
+            } else {
+                arrowUp.classList.remove('show');
+            }
+        })
+        arrowUp.addEventListener('click', function() {
+            sectionHome.scrollIntoView({behavior:"smooth",block:"center"});
+        });
+
+        // 작품목록
+        const workBtnContainer = document.querySelector('.work__categories');
+        const projectContainer = document.querySelector('.work__projects');
+        const projects = document.querySelectorAll('.project');
+
+        workBtnContainer.addEventListener('click', function(e){
+            const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter ;
+            if(filter == null) {
+                return;
+            }
+            
+            const active = document.querySelector('.category__btn.selected');
+            active.classList.remove('selected');
+
+            const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+            target.classList.add('selected');
+
+            projectContainer.classList.add('anim-out');
+            setTimeout(() => {
+                projects.forEach((project) => {
+                    if(filter === '*' || filter === project.dataset.type) {
+                        project.classList.remove('invisible');
+                    } else {
+                        project.classList.add('invisible');
+                    }
+                })
+
+                
+                    projectContainer.classList.remove('anim-out'); 
+                }, 300);
+        
+        
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>
