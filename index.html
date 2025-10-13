@@ -212,6 +212,8 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all var(--transition-speed) ease;
+            display: flex;
+            align-items: center;
         }
 
         .category__btn:hover {
@@ -237,24 +239,35 @@
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: inline-block;
-            width: 24px;
+            width: 0; /* Initially hidden */
             height: 24px;
             line-height: 24px;
             text-align: center;
             font-size: 0.8rem;
-            margin-left: 0.5rem;
+            margin-left: 0; /* Initially no margin */
+            opacity: 0; /* Initially hidden */
+            transition: all var(--transition-speed) ease;
+            vertical-align: middle;
+            overflow: hidden;
         }
+
+        .category__btn.selected .category__count {
+            width: 24px; /* Visible */
+            margin-left: 0.5rem; /* Margin when visible */
+            opacity: 1; /* Visible */
+        }
+
 
         .work__projects {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            transition: all 0.5s ease-out;
+            gap: 2.5rem; /* Increased gap */
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
         }
 
         .work__projects.anim-out {
             opacity: 0;
-            transform: scale(0.95) translateY(20px);
+            transform: scale(0.97) translateY(20px);
         }
 
         .project {
@@ -557,7 +570,9 @@
                     const filter = filterBtn.dataset.filter;
 
                     const active = document.querySelector('.category__btn.selected');
-                    active.classList.remove('selected');
+                    if (active) {
+                       active.classList.remove('selected');
+                    }
                     filterBtn.classList.add('selected');
 
                     projectContainer.classList.add('anim-out');
@@ -570,7 +585,7 @@
                             }
                         });
                         projectContainer.classList.remove('anim-out');
-                    }, 300);
+                    }, 600); // Smoother transition
                 });
             }
 
@@ -609,3 +624,4 @@
     </script>
 </body>
 </html>
+
