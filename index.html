@@ -239,29 +239,29 @@
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: inline-block;
-            width: 0; 
+            width: 0; /* Initially hidden */
             height: 24px;
             line-height: 24px;
             text-align: center;
             font-size: 0.8rem;
-            margin-left: 0; 
-            opacity: 0; 
+            margin-left: 0; /* Initially no margin */
+            opacity: 0; /* Initially hidden */
             transition: all var(--transition-speed) ease;
             vertical-align: middle;
             overflow: hidden;
         }
 
         .category__btn.selected .category__count {
-            width: 24px; 
-            margin-left: 0.5rem; 
-            opacity: 1; 
+            width: 24px; /* Visible */
+            margin-left: 0.5rem; /* Margin when visible */
+            opacity: 1; /* Visible */
         }
 
 
         .work__projects {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2.5rem; 
+            gap: 2.5rem; /* Increased gap */
             transition: all 0.3s ease-in-out;
         }
 
@@ -363,14 +363,15 @@
         .skill__container {
             position: relative;
             display: flex;
-            flex-direction: column; 
-            align-items: center; 
+            flex-direction: column;
+            align-items: center;
         }
-        
+
+        /* ✨ 수정된 부분: 스킬 툴팁은 원래대로 호버 시에만 보이도록 복원 */
         .skill__tooltip {
             position: absolute;
-            top: 100%; 
-            margin-top: 15px; /* 아이콘과의 간격 */
+            top: 100%;
+            margin-top: 15px;
             background-color: var(--surface-color);
             color: var(--on-surface-text-color);
             padding: 8px 12px;
@@ -382,11 +383,10 @@
             transition: all var(--transition-speed) ease;
             pointer-events: none;
             box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-
             width: max-content;
-            max-width: 200px; /* 박스의 최대 너비 */
-            white-space: normal; /* 텍스트 자동 줄바꿈 */
-            text-align: center; /* 텍스트 가운데 정렬 */
+            max-width: 200px;
+            white-space: normal;
+            text-align: center;
             line-height: 1.4;
         }
 
@@ -400,12 +400,66 @@
             border-style: solid;
             border-color: transparent transparent var(--surface-color) transparent;
         }
-
+        
         .skill__container:hover .skill__tooltip {
             opacity: 1;
             visibility: visible;
         }
 
+        .theme-toggle-container {
+            position: relative;
+        }
+        
+        /* ✨ 수정된 부분: 테마 변경 툴팁에만 애니메이션 적용 */
+        .theme-tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 15px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--on-surface-text-color);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            pointer-events: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+            
+            /* 5초 후 사라지는 애니메이션 적용 */
+            animation: tooltip-fade-out 0.5s ease-in-out 5s forwards;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .theme-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent var(--surface-color) transparent;
+        }
+        
+        .theme-toggle-container:hover .theme-tooltip {
+            opacity: 1;
+            visibility: visible;
+            animation: none; /* 호버 시에는 애니메이션 비활성화 */
+        }
+
+        @keyframes tooltip-fade-out {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
 
     </style>
 </head>
@@ -419,10 +473,14 @@
                 <button class="btn" data-target="#skills">Skills</button>
                 <button class="btn" data-target="#works">Works</button>
                 <button class="btn" data-target="#contact">Contact</button>
-                <button id="theme-toggle" class="btn">
-                    <span class="material-symbols-outlined icon-sun">light_mode</span>
-                    <span class="material-symbols-outlined icon-moon">dark_mode</span>
-                </button>
+                
+                <div class="theme-toggle-container">
+                    <button id="theme-toggle" class="btn">
+                        <span class="material-symbols-outlined icon-sun">light_mode</span>
+                        <span class="material-symbols-outlined icon-moon">dark_mode</span>
+                    </button>
+                    <span class="theme-tooltip">테마를 변경해보세요</span>
+                </div>
             </div>
         </div>
     </div>
@@ -471,7 +529,7 @@
                 </div>
                 <div class="skill__container">
                     <img src="imgs/figma.png" alt="Figma" class="skill__icon" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1e1e1e/e0e0e0?text=Figma'">
-                    <span class="skill__tooltip">웹 디자인</span>
+                    <span class="skill__tooltip">웹 디자인, 반응형 디자인</span>
                 </div>
                 <div class="skill__container">
                     <img src="imgs/procreate.png" alt="Procreate" class="skill__icon" onerror="this.onerror=null; this.src='https://placehold.co/80x80/1e1e1e/e0e0e0?text=PC'">
